@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace B23_Ex05_Ariel_315363366_Adi_206820045
+namespace Ex05.UserInterface
 {
     static class Program
     {
@@ -16,7 +13,7 @@ namespace B23_Ex05_Ariel_315363366_Adi_206820045
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormGameSettings());
         }
     }
 }

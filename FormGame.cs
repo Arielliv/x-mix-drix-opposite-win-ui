@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace B23_Ex05_Ariel_315363366_Adi_206820045
+namespace Ex05.UserInterface
 {
-    public partial class Form1 : Form
+    public partial class FormGame : Form
     {
-        public Form1()
+        public FormGame()
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
-namespace B23_Ex05_Ariel_315363366_Adi_206820045
+namespace Ex05.UserInterface
 {
-    partial class Form1
+    partial class FormGame
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,9 @@ namespace B23_Ex05_Ariel_315363366_Adi_206820045
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Text = "FormGame";
         }
 
         #endregion
     }
 }
-
