@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CellButton.Designer.cs">
+      <DependentUpon>CellButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,8 +64,23 @@
     <Compile Include="FormGameSettings.Designer.cs">
       <DependentUpon>FormGameSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameBoardDisplay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GameBoardDisplay.Designer.cs">
+      <DependentUpon>GameBoardDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerScoreDisplay.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PlayerScoreDisplay.Designer.cs">
+      <DependentUpon>PlayerScoreDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormGame.resx">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGameSettings.resx">
       <DependentUpon>FormGameSettings.cs</DependentUpon>
     </EmbeddedResource>

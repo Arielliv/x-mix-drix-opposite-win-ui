@@ -39,6 +39,7 @@ namespace Ex05.UserInterface
         private void isSecondPlayerHumanCheckBox_CheckedChanged(object i_Sender, EventArgs i_EventArgs)
         {
             textBoxPlayer2.ReadOnly = !checkBoxIsHuman.Checked;
+            textBoxPlayer2.Enabled = checkBoxIsHuman.Checked;
             textBoxPlayer2.Text = checkBoxIsHuman.Checked
                                           ? string.Empty
                                           : "[Computer]";

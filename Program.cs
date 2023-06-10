@@ -13,7 +13,7 @@ namespace Ex05.UserInterface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormGameSettings());
+            Application.Run(new FormGame());
         }
     }
 }
