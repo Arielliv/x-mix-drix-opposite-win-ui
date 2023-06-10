@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.33529.622
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05.UserInterface", "Ex05.UserInterface.csproj", "{51D9CC47-7482-413C-B759-6957F0ED91AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05.GameLogic", "..\GameLogic\Ex05.GameLogic.csproj", "{DA3FF45E-FF4E-40B5-979F-1B58835E5489}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex05.GameLogic", "GameLogic\Ex05.GameLogic.csproj", "{DA3FF45E-FF4E-40B5-979F-1B58835E5489}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

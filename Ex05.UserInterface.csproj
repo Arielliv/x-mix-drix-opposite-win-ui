@@ -107,8 +107,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\GameLogic\Ex05.GameLogic.csproj">
+    <ProjectReference Include="GameLogic\Ex05.GameLogic.csproj">
       <Project>{da3ff45e-ff4e-40b5-979f-1b58835e5489}</Project>
       <Name>Ex05.GameLogic</Name>
     </ProjectReference>
