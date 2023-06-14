@@ -45,6 +45,14 @@ namespace Ex05.GameLogic
             return this.r_Players[this.m_ActivePlayerIndex];
         }
 
+        public int ActivePlayerIndex
+        {
+            get
+            {
+                return this.m_ActivePlayerIndex;
+            }
+        }
+
         public bool IsVictory()
         {
             return this.m_ActiveGame.IsVictory(this.GetActivePlayer().Mark);
@@ -88,10 +96,13 @@ namespace Ex05.GameLogic
             eMarks activePlayerMark = this.GetActivePlayer().Mark;
 
             this.m_ActiveGame.SetNextMoveCell(i_NextMove[0], i_NextMove[1], activePlayerMark);
-            if (!this.IsVictory())
+            if (!this.IsVictory() && !this.IsTie())
             {
                 this.SetNextActivePlayer();
-
+                if (this.GetActivePlayer().Type == ePlayerTypes.Computer)
+                {
+                    this.ApplyNextMove(this.GetComputerNextMove());
+                }
             }
             else if(this.IsTie())
             {
@@ -99,6 +110,7 @@ namespace Ex05.GameLogic
             }
             else if(this.IsVictory())
             {
+                this.SetNextActivePlayer();
                 onRoundFinished();
             }
         }

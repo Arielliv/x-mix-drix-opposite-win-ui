@@ -56,5 +56,10 @@
                 && i_Y < gridSize && i_Y >= 0
                 && this.IsCellEmpty(i_X, i_Y);
         }
+
+        public Cell getCellAt(int i_X, int i_Y)
+        {
+            return this.r_GridMatrix[i_X, i_Y];
+        }
     }
 }

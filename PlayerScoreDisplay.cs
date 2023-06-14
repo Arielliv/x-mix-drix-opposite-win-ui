@@ -28,6 +28,19 @@ namespace Ex05.UserInterface
             }
         }
 
+        public int Score
+        {
+            set
+            {
+                this.m_Player.Score = value;
+                m_Player_ScoreChanged();
+            }
+            get
+            {
+                return this.m_Player.Score;
+            }
+        }
+
         private void m_Player_ScoreChanged()
         {
             setPlayerText();
