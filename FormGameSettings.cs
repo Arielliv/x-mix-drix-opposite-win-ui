@@ -13,27 +13,64 @@ namespace Ex05.UserInterface
 {
     public partial class FormGameSettings : Form
     {
-        public string FirstPlayerName => textBoxPlayer1.Text;
+        public string FirstPlayerName
+        {
+            get
+            {
+                return textBoxPlayer1.Text;
+            }
+        }
 
-        public string SecondPlayerName => textBoxPlayer2.Text.TrimStart('[').TrimEnd(']');
+        public string SecondPlayerName
+        {
+            get
+            {
+                return textBoxPlayer2.Text.TrimStart('[').TrimEnd(']');
+            }
+        }
 
-        public ePlayerTypes SecondPlayerType =>
-            checkBoxIsHuman.Checked
-                ? ePlayerTypes.Person
-                : ePlayerTypes.Computer;
+        public ePlayerTypes SecondPlayerType
+        {
+            get
+            {
+                return checkBoxIsHuman.Checked ? ePlayerTypes.Person : ePlayerTypes.Computer;
+            }
+        }
 
-        public int RowsNumber => (int)numericUpDownRows.Value;
+        public int RowsNumber
+        {
+            get
+            {
+                return (int)numericUpDownRows.Value;
+            }
+        }
 
-        public int ColsNumber => (int)numericUpDownCols.Value;
+        public int ColsNumber 
+        {
+            get 
+            { 
+                return (int)numericUpDownCols.Value; 
+            }
+        }
 
         public FormGameSettings()
         {
             InitializeComponent();
         }
 
-        private void FormGame_Load(object sender, EventArgs e)
+        private void isRowsInput_ValueChanged(object i_Sender, EventArgs i_EventArgs)
         {
+            if (this.RowsNumber != this.ColsNumber) {
+                this.numericUpDownCols.Value = this.RowsNumber;
+            }
+        }
 
+        private void isColsInput_ValueChanged(object i_Sender, EventArgs i_EventArgs)
+        {
+            if (this.RowsNumber != this.ColsNumber)
+            {
+                this.numericUpDownRows.Value = this.ColsNumber;
+            }
         }
 
         private void isSecondPlayerHumanCheckBox_CheckedChanged(object i_Sender, EventArgs i_EventArgs)

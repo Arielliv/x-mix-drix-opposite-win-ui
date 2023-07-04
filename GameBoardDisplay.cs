@@ -8,7 +8,11 @@ namespace Ex05.UserInterface
 
         public int RowSize
         {
-            get => r_Panel.RowCount;
+            get 
+            { 
+                return r_Panel.RowCount; 
+            }
+
             set
             {
                 r_Panel.RowCount = value;
@@ -18,13 +22,24 @@ namespace Ex05.UserInterface
 
         public int ColSize
         {
-            get => r_Panel.ColumnCount;
-            set => r_Panel.ColumnCount = value;
+            get 
+            { 
+                return r_Panel.ColumnCount; 
+            }
+
+            set 
+            { 
+                r_Panel.ColumnCount = value;
+            }
         }
 
         public Button this[int i_Row, int i_Column]
         {
-            get => r_Panel.GetControlFromPosition(i_Column, i_Row) as Button;
+            get
+            {
+                return r_Panel.GetControlFromPosition(i_Column, i_Row) as Button;
+            }
+
             set
             {
                 value.Dock = DockStyle.Fill;
@@ -37,10 +52,7 @@ namespace Ex05.UserInterface
             r_Panel = new TableLayoutPanel
             {
                 Size = Size,
-                Anchor = AnchorStyles.Bottom |
-                                                                   AnchorStyles.Left |
-                                                                   AnchorStyles.Right |
-                                                                   AnchorStyles.Top
+                Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top
             };
             Controls.Add(r_Panel);
         }
@@ -49,7 +61,6 @@ namespace Ex05.UserInterface
         {
             r_Panel.ColumnStyles.Clear();
             r_Panel.RowStyles.Clear();
-
             for (int i = 0; i < r_Panel.ColumnCount; i++)
             {
                 r_Panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100 / ColSize));

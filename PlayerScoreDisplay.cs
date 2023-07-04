@@ -12,36 +12,36 @@ namespace Ex05.UserInterface
         {
             if (m_Player != null)
             {
-                m_Player.BecameActive -= m_Player_BecameActive;
-                m_Player.BecameInactive -= m_Player_BecameInactive;
-                m_Player.ScoreChanged -= m_Player_ScoreChanged;
+                m_Player.BecameActive -= player_BecameActive;
+                m_Player.BecameInactive -= player_BecameInactive;
+                m_Player.ScoreChanged -= player_ScoreChanged;
             }
 
             m_Player = i_Player;
-
             if (m_Player != null)
             {
-                m_Player.BecameActive += m_Player_BecameActive;
-                m_Player.BecameInactive += m_Player_BecameInactive;
-                m_Player.ScoreChanged += m_Player_ScoreChanged;
+                m_Player.BecameActive += player_BecameActive;
+                m_Player.BecameInactive += player_BecameInactive;
+                m_Player.ScoreChanged += player_ScoreChanged;
                 setPlayerText();
             }
         }
 
         public int Score
         {
-            set
-            {
-                this.m_Player.Score = value;
-                m_Player_ScoreChanged();
-            }
             get
             {
                 return this.m_Player.Score;
             }
+
+            set
+            {
+                this.m_Player.Score = value;
+                player_ScoreChanged();
+            }  
         }
 
-        private void m_Player_ScoreChanged()
+        private void player_ScoreChanged()
         {
             setPlayerText();
         }
@@ -51,12 +51,12 @@ namespace Ex05.UserInterface
             Text = $"{m_Player.PlayerName}:{m_Player.Score}";
         }
 
-        private void m_Player_BecameInactive()
+        private void player_BecameInactive()
         {
             Font = new Font(Font, FontStyle.Regular);
         }
 
-        private void m_Player_BecameActive()
+        private void player_BecameActive()
         {
             Font = new Font(Font, FontStyle.Bold);
         }

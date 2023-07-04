@@ -9,7 +9,6 @@ namespace Ex05.UserInterface
     {
         private readonly GameController r_GameController;
         private readonly FormGameSettings r_Settings = new FormGameSettings();
-
         public event Action RoundFinished;
 
         public FormGame()
@@ -23,17 +22,13 @@ namespace Ex05.UserInterface
             }
 
             InitializeComponent();
-
             this.r_GameController = new GameController(
                 new Player(ePlayerTypes.Person, eMarks.X, this.r_Settings.FirstPlayerName),
                 new Player(this.r_Settings.SecondPlayerType, eMarks.O, this.r_Settings.SecondPlayerName));
             this.r_GameController.InitNewGame(this.r_Settings.ColsNumber);
-
             this.r_GameController.RoundFinished += game_RoundFinished;
-
             GameBoardDisplay.ColSize = this.r_GameController.GetGrid().GetGridSize();
             GameBoardDisplay.RowSize = GameBoardDisplay.ColSize;
-
             for (int i = 0; i < GameBoardDisplay.RowSize; i++)
             {
                 for (int j = 0; j < GameBoardDisplay.ColSize; j++)
@@ -78,7 +73,6 @@ namespace Ex05.UserInterface
                 roundFinishedStringBuilder.ToString(),
                 title,
                 MessageBoxButtons.YesNo);
-
             if (dialogResult == DialogResult.Yes)
             {
                 this.r_GameController.InitNewGame(this.r_Settings.ColsNumber);
@@ -107,6 +101,7 @@ namespace Ex05.UserInterface
                 this.r_GameController.ApplyNextMove(cellIndex);
             }
         }
+
         private void onRoundFinished()
         {
             RoundFinished?.Invoke();

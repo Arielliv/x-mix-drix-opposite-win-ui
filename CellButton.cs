@@ -18,7 +18,6 @@ namespace Ex05.UserInterface
             this.r_ColIndex = i_ColIndex;
             this.r_RowIndex = i_RowIndex;
             this.TextAlign = ContentAlignment.MiddleCenter;
-
         }
 
         public int[] GetCellIndex()
@@ -32,7 +31,6 @@ namespace Ex05.UserInterface
                 this.m_Cell.ValueChanged += this.cell_ValueChanged; 
             }
         }
-
 
         private void cell_ValueChanged()
         {
